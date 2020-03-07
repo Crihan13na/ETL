@@ -1,0 +1,29 @@
+CREATE TABLE mnhospital (
+"HOSPITAL_ID" INT,
+"NAME" TEXT,
+"ADDRESS" TEXT,
+"CITY" TEXT,
+"STATE" TEXT,
+"HOSP_BEDS" INT
+);
+
+Select * from mnhospital;
+
+CREATE TABLE mndivs3 (
+"Contribution_ID" VARCHAR PRIMARY KEY,
+"Orgname" TEXT,
+"Amount" INT,
+"City" TEXT,
+"State" TEXT,
+"Zip" VARCHAR,
+"Gender" TEXT
+);
+
+Select * from mndivs3;
+
+-- Joins tables
+SELECT mnhospital."HOSPITAL_ID", mnhospital."NAME", mnhospital."ADDRESS", mnhospital."CITY", mnhospital."STATE", mnhospital."HOSP_BEDS"
+FROM mnhospital
+JOIN mndivs3
+ON mnhospital."CITY" = mndivs3."City";
+
